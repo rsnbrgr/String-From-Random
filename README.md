@@ -15,8 +15,6 @@ http://www.gnu.org/software/libc/manual/html_node/BSD-Random.html
 
 https://en.wikibooks.org/wiki/C_Programming/stdlib.h
 
-You can see this code in action at http://ideone.com/NJO94H and you can see its output in action at http://ideone.com/ddgP3q
-
-Some (maybe all?) GCC implementations carry it, e.g. GCC 6.3 as installed on the http://ideone.com compiler website.  OpenBSD's GCC implementation will throw a warning if you call random().
+Some (maybe all?) GCC implementations carry it, e.g. GCC as installed on the http://ideone.com compiler website.  You can see this code in action at http://ideone.com/NJO94H and you can see its output in action at http://ideone.com/ddgP3q.  OpenBSD's GCC implementation will throw a warning if you call random().
 
 FYI: Rosenberger uses the "Whitesmiths" coding indent style and "PascalCase" identifier naming style.  He doesn't always use braces for singular statements.
