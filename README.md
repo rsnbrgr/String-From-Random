@@ -21,6 +21,10 @@ ODD BEHAVIOR NOTICED ON THESE PLATFORMS: OpenBSD 5.9 with GCC 4.2.1 appears to u
 
 FYI: Rosenberger uses the "Whitesmiths" coding indent style and "PascalCase" identifier naming style.  He doesn't always use braces for singular statements.
 
-Q: "Why didn't you use getchar() in the main() function?"
+Q1: "Why didn't you use getchar() in the main() function?"  I wanted to include the string it will print, in a comment at the top of the generated C source code.  Yes, I might fork the code someday to allow unlimited binary input.  But in the meantime, you can fork it yourself.
 
-A: I wanted to include the string it will print, in a comment at the top of the generated C source code.  Yes, I might fork the code someday to allow unlimited binary input.  But in the meantime, you can fork it yourself.
+Q2: "Why did you label '\n' as BLANKLINE?"  The string literally defines a blank line.
+
+Q3: "Why do you use C++/C# keywords as variables?"  Because I mourn the halcyon days of object-oriented Pascal.
+
+Q4: "Why don't you always use braces?"  It's an old Pascal habit.
