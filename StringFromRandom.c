@@ -7,6 +7,9 @@ his proof-of-concept C program published 5 Apr 17.
 
    USE: StringFromRandom  <SomeString  >SourceCode
 
+GitHub repository:
+   https://github.com/rsnbrgr/String-From-Random
+
 This proof-of-concept reads a string from stdin up to 4095 characters and writes
 to stdout the source code for a C program that will generate said string using
 only calls to the stdlib.h random() function.
@@ -14,8 +17,9 @@ only calls to the stdlib.h random() function.
 THE IMPORTANT CONCEPT: This program merely proves Dr. Saarinen's algorithm in a
 different fashion.  It makes absolutely NO calls to random() -- rather, it uses
 Dr. Saarinen's "magic value" to write a C program that itself ONLY makes calls
-to random().  Yes yes yes, I know Dr. Saarinen's algorithm works: I compared
-3.653 trillion iterations over a weekend just to see if it might fail.
+to random().  This proves random(3) is NOT non-linear, and IS predictable. As a
+sidenote, I know Dr. Saarinen's algorithm works: I compared 3.653 trillion
+consecutive iterations over a weekend just to see if it might fail.
 
 REQUIREMENTS: a C compiler must include the POSIX non-ISO "random()" function in
 the <stdlib.h> header.  See these websites for details:
@@ -32,7 +36,8 @@ Obfuscate C code to evade antivirus using only calls to random().
 MEMO TO Rob Lee & Ed Skoudis at SANS:
 Include a trick like this in a future "NetWars."  Thiiiiink about it...!
 
-
+20170714 v1.02 by Rob Rosenberger <us@kumite.com>
+   Commit to GitHub: https://github.com/rsnbrgr/String-From-Random
 20170707 v1.01 by Rob Rosenberger <us@kumite.com>
    A minor code tweak.  Commit to GitHub.
 20170706 v1.00 by Rob Rosenberger <us@kumite.com>
