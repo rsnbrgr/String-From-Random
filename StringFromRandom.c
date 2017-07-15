@@ -37,7 +37,8 @@ MEMO TO Rob Lee & Ed Skoudis at SANS:
 Include a trick like this in a future "NetWars."  Thiiiiink about it...!
 
 20170714 v1.02 by Rob Rosenberger <us@kumite.com>
-   Commit to GitHub: https://github.com/rsnbrgr/String-From-Random
+   Commit to GitHub https://github.com/rsnbrgr/String-From-Random.  Added a
+   printf() to include this info in the output stream.
 20170707 v1.01 by Rob Rosenberger <us@kumite.com>
    A minor code tweak.  Commit to GitHub.
 20170706 v1.00 by Rob Rosenberger <us@kumite.com>
@@ -89,6 +90,8 @@ int main(void)
     printf("This C source code spits out the following string using only\n");
     printf("calls to the predictable (!) stdlib.h random() function:\n\"%s\"\n",
            UserInput);
+    printf("See this GitHub repository for the program that wrote this code:\n");
+    printf("   https://github.com/rsnbrgr/String-From-Random\n");
     WriteOpenCloseComments(0);
 
     /* Write source code that writes each character in UserInput. */
