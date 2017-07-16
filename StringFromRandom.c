@@ -31,8 +31,8 @@ the http://ideone.com compiler website.  Use the TestForPosixRandom.c code at
 the above GitHub repository (see above) to test your compiler.
 
 20170715 v1.03 by Rob Rosenberger <us@kumite.com>
-   Removed extraneous "TempChar" variable from Construct1Char().  Minor tweaks
-   to comments.
+   Removed unneeded "TempChar" variable from Construct1Char().  Used FOURSPACES
+   in WriteIndents() (duh!).  Minor tweaks to comments.
 20170714 v1.02 by Rob Rosenberger <us@kumite.com>
    Commit to GitHub https://github.com/rsnbrgr/String-From-Random.  Added a
    printf() to include this info in the output stream.
@@ -109,9 +109,6 @@ int main(void)
 
 
 
-
-
-
 /*
  ** Function definitions start here
  ** Function definitions start here
@@ -170,12 +167,12 @@ int WriteOpenCloseComments(int OpenComments)
 
 
 int WriteIndents(int Levels)
-    /* Writes four spaces per Levels.  Returns the total printf() value. */
+    /* Writes FOURSPACES per level.  Returns the total printf() value. */
     {
     int CharsWritten = 0;
     
-    for (int x = 0; x < Levels * 4; x++)
-        CharsWritten += printf(" ");
+    for ( ; Levels > 0; Levels--)
+        CharsWritten += printf(FOURSPACES);
 
     return CharsWritten;    
     }
