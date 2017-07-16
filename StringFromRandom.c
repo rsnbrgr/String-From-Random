@@ -26,16 +26,13 @@ the <stdlib.h> header.  See these websites for details:
    http://man7.org/linux/man-pages/man3/random.3.html
    http://www.gnu.org/software/libc/manual/html_node/BSD-Random.html
    https://en.wikibooks.org/wiki/C_Programming/stdlib.h
-Some (maybe all?) GCC implementations carry it, e.g. GCC 6.3 as installed on the
-http://ideone.com compiler website.  OpenBSD's GCC implementation will throw a
-warning if you call random().
+Some (but not all) GCC implementations carry it, e.g. GCC 6.3 as installed on
+the http://ideone.com compiler website.  Use the TestForPosixRandom.c code at
+the above GitHub repository (see above) to test your compiler.
 
-MEMO TO Veil-Evasion:
-Obfuscate C code to evade antivirus using only calls to random().
-
-MEMO TO Rob Lee & Ed Skoudis at SANS:
-Include a trick like this in a future "NetWars."  Thiiiiink about it...!
-
+20170715 v1.03 by Rob Rosenberger <us@kumite.com>
+   Removed extraneous "TempChar" variable from Construct1Char().  Minor tweaks
+   to comments.
 20170714 v1.02 by Rob Rosenberger <us@kumite.com>
    Commit to GitHub https://github.com/rsnbrgr/String-From-Random.  Added a
    printf() to include this info in the output stream.
@@ -105,7 +102,6 @@ int main(void)
             WriteLn(3);
             }
 
-
     /* Wrap up. */
     WriteSourceCodeTemplate(0);
     return 0;
@@ -128,8 +124,8 @@ int EmulateRandomBit(void)
     /*
      ** Returns 0 or 1 exactly as if you called "random() % 2".
      ** Again, all credit where due to Dr. Markku-Juhani O. Saarinen!
-     ** NOTE: our file-scope variable "Saarinen" variable CHANGES with
-     ** each call to this function.
+     ** NOTE: our file-scope variable "Saarinen" CHANGES with each call
+     ** to this function.
     */
     {
     Saarinen = (Saarinen << 2) 
@@ -163,7 +159,6 @@ int WriteLn(int HowManyNewlines)
     }
 
 
-
 int WriteOpenCloseComments(int OpenComments)
     /* Writes opening or closing comments.  Returns the total printf() value. */
     {
@@ -189,8 +184,7 @@ int WriteIndents(int Levels)
 int Construct1Char(char c)
     /* Constructs and prints a char "c". Returns the total printf() value. */
     {
-    char TempChar     = c;
-    int  CharsWritten = 0;
+    int CharsWritten = 0;
     
     CharsWritten += WriteIndents(1) + printf("using=0;")   + WriteLn(1);
     CharsWritten += WriteIndents(1) + printf("bitchar=0;") + WriteLn(1);
@@ -205,7 +199,7 @@ int Construct1Char(char c)
 
         /* Now we need to find a "random" bit: either 1 or 0. */
         do RandomSlide++;
-         while ((TempChar & 128) != (EmulateRandomBit() * 128));
+         while ((c & 128) != (EmulateRandomBit() * 128));
         
         WriteIndents(1);
         /* RandomSlide == how many calls to random() gives our bit! */
@@ -217,8 +211,8 @@ int Construct1Char(char c)
             CharsWritten += printf(" bitchar <<= 1;");
         CharsWritten += WriteLn(1);
 
-        /* Prep TempChar for the next loop iteration. */
-        TempChar <<= 1;
+        /* Prep "c" for the next loop iteration. */
+        c <<= 1;
         }
     CharsWritten += WriteIndents(1);
     CharsWritten += printf("printf(\"%%c\",bitchar);") + WriteLn(1);
