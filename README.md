@@ -1,7 +1,9 @@
 # String-From-Random
 CITATION: based on the work of Dr. Markku-Juhani O. Saarinen <mjos@iki.fi> and his proof-of-concept C program published 5 Apr 17.
 
-   USE: StringFromRandom  \<SomeString  \>SourceCode
+   USE: gcc TestForPosixRandom.c  &&  ./a.out
+   
+   USE: gcc StringFromRandom.c  &&  ./a.out  \<SomeString  \>SourceCode
 
 This PUBLIC DOMAIN proof-of-concept reads a string from stdin up to 4095 characters and writes to stdout the source code for a C program that will generate said string using only calls to the \<stdlib.h\> random() function.
 
