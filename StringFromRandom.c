@@ -22,13 +22,13 @@ sidenote, I know Dr. Saarinen's algorithm works: I compared 3.653 trillion
 consecutive iterations over a weekend just to see if it might fail.
 
 REQUIREMENTS: a C compiler must include the POSIX non-ISO "random()" function in
-the <stdlib.h> header.  See these websites for details:
+the <stdlib.h> header.  Use TestForPosixRandom.c code at the GitHub repository
+(see above) to test your compiler.  See these websites for more details:
    http://man7.org/linux/man-pages/man3/random.3.html
    http://www.gnu.org/software/libc/manual/html_node/BSD-Random.html
    https://en.wikibooks.org/wiki/C_Programming/stdlib.h
 Some (but not all) GCC implementations carry it, e.g. GCC 6.3 as installed on
-the http://ideone.com compiler website.  Use the TestForPosixRandom.c code at
-the above GitHub repository (see above) to test your compiler.
+the http://ideone.com compiler website.
 
 20170715 v1.03 by Rob Rosenberger <us@kumite.com>
    Removed unneeded "TempChar" variable from Construct1Char().  Used FOURSPACES
