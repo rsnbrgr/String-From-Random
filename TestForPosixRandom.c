@@ -1,7 +1,7 @@
 /*
 This PUBLIC DOMAIN program tests a C compiler for a predictable POSIX-compliant
-non-ISO random() function.  See https://github.com/rsnbrgr/String-From-Random
-for full details.
+non-ISO random() function.  See github.com/rsnbrgr/String-From-Random for full
+details.
 */
 
 #include <stdio.h>
