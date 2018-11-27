@@ -23,7 +23,7 @@ https://en.wikibooks.org/wiki/C_Programming/stdlib.h
 
 Many (not all) GCC implementations include the exploitable random(3).  Use the included "TestForPosixRandom.c" program to test your C compiler.
 
-WORKS ON THESE PLATFORMS: Kali Linux 3.14-kali1-amd64.  NetWars Linux 3.2.0-58-generic.  CentOS 7 Linux 3.10.0-514.2.2.el7.x86_64.  You can compile & run this program's code online at http://ideone.com/NJO94H and see its output in action at http://ideone.com/ddgP3q. 
+WORKS ON THESE PLATFORMS: Kali Linux 3.14- and 4.17.0-kali1-amd64.  NetWars Linux 3.2.0-58-generic.  CentOS 7 Linux 3.10.0-514.2.2.el7.x86_64.  You can compile & run this program's code online at http://ideone.com/NJO94H and see its output in action at http://ideone.com/ddgP3q. 
 
 ODD BEHAVIOR NOTICED ON THESE PLATFORMS: OpenBSD 5.9 with GCC 4.2.1 appears to use a different PRNG; and it throws a "deterministic values" warning when you call random().  Windows MinGW-64 with GCC 5.3.0 doesn't include random() in <stdlib.h>.
 
